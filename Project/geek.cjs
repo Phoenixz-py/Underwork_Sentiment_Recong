@@ -1,5 +1,5 @@
 
-// Requiring express npm package
+// Requiring express npm package and saving express fn in app
 const express = require('express')
 
 const app = express()
@@ -9,11 +9,12 @@ app.use(express.urlencoded({
     extended: true
 }))
 
+
 // Handling Post request
 app.post('/submit',function(req,res){
 
 
-    // Can access all parameters from req.body
+    // Can access all parameters from request body
     console.log('POST parameter recieved are: ',req.body)
 
 const fs = require('fs');  
@@ -35,15 +36,22 @@ const child_process = require('child_process');
     res.redirect('/')
 })
 
+// Adding middleware so I can load 
+app.use(express.static('public'))
+
 // Get request 
 app.get('/',function(req,res){
     
-    // Sent index.html file to the client
+    // Sends my post html file to the client
+
     res.sendFile(__dirname+'/post.html')
 })
+
 
 // Creating server at port 3000
 
 app.listen(3000,function(req,res){
     console.log('started listening at server 3000')
 })
+
+
