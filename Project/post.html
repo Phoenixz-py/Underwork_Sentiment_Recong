@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,18 +11,18 @@
     <!-- Auto typing content -->
     <div class="container">
         <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
-      </div>
+    </div>
       
     <!-- Action to the same route as in post method I added -->
-    <div class="col-3">
-    <form action="/submit" method="post">
-        Name: <input type="text" name="name">
-        <br><br>
-        <button type="submit">Submit</button>
+    <div class="form-container">
+        <form action="/submit" method="post">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <br><br>
+            <button class="button" type="submit">Submit</button>
+        </form>
     </div>
-    </form>
 
     <script src="/function/autowriter.js"></script>
 </body>
-
 </html>
